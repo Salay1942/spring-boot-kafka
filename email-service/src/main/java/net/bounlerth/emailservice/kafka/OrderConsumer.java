@@ -11,10 +11,8 @@ public class OrderConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderConsumer.class);
 
-    @KafkaListener(topics = "${spring.kafka.topic.name}",groupId = "${spring.kafka.consumer.group-id}"
-    )
+    @KafkaListener(topics = "${spring.kafka.topic.name}",groupId = "${spring.kafka.consumer.group-id}")
     public void consume(OrderEvent event){
         LOGGER.info(String.format("Order event received in email service => %s", event.toString()));
-        // send an email to the customer
     }
 }

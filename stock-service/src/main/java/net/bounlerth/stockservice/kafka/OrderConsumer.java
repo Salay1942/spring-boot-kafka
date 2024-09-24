@@ -11,12 +11,10 @@ public class OrderConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderConsumer.class);
 
-    @KafkaListener(topics = "${spring.kafka.topic.name}" ,groupId = "${spring.kafka.consumer.group-id}"
-    )
+    @KafkaListener(topics = "${spring.kafka.topic.name}" ,groupId = "${spring.kafka.consumer.group-id}")
     public String consume(OrderEvent event){
         LOGGER.info(String.format("Order event received in stock service => %s", event.toString()));
-        LOGGER.info("xxxx");
         return  "XXXX";
-        // save the order event into the database
     }
+
 }
